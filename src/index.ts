@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
+import { googleAuth } from "@hono/oauth-providers/google";
 
 const app = new Hono();
 
@@ -67,5 +68,16 @@ app.get("/auth/google", async (c) => {
     `https://accounts.google.com/o/oauth2/v2/auth?${parsedOptions}`
   );
 });
+
+app.get(
+  "/auth/google-2",
+  googleAuth({
+    scope: ["openid", "email", "profile"],
+  }),
+  async (c) => {
+    const token = c.get('token')
+    const user = c.get('user-google')
+  }
+);
 
 export default app;
