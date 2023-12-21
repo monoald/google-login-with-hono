@@ -1,8 +1,3 @@
-```
-npm install
-npm run dev
-```
+# Google login with Hono JS
 
-```
-npm run deploy
-```
+This code is the source code of explanation of the blog post [Google Login with Hono JS](https://monoald.github.io/blog/google-login-in-hono/)
